@@ -113,7 +113,7 @@ static int init(void)
 
 static void cleanup(void)
 {
-    ioctl((intptr_t)tPalConfig.pDevHandle, SRXXX_SET_FWD, 0);
+    ioctl((intptr_t)tPalConfig.pDevHandle, SR100_SET_FWD, 0);
 
     if (NULL != gOpts.fImg)
     {
@@ -595,7 +595,7 @@ static phHbci_Status_t phHbci_MasterHIFImage(uint8_t *pImg, uint32_t imgSz)
             case phHbci_HIF_Image_Ans_Image_Success:
                 ALOGD("HIF Image Transfer Complete.\n");
                 /*Check FW download throughput measurement*/
-                //ioctl((intptr_t)tPalConfig.pDevHandle, SRXXX_GET_THROUGHPUT, 0);
+                //ioctl((intptr_t)tPalConfig.pDevHandle, SR100_GET_THROUGHPUT, 0);
                 return phHbci_Success;
 
             case phHbci_HIF_Image_Ans_Header_Too_Large:
@@ -927,7 +927,7 @@ int phNxpUciHal_fw_download()
     setOpts();
 
 
-    ioctl((intptr_t)tPalConfig.pDevHandle, SRXXX_SET_FWD, 1);
+    ioctl((intptr_t)tPalConfig.pDevHandle, SR100_SET_FWD, 1);
     /* Always display chip id information */
     is_fw_download_log_enabled = true;
     if (phHbci_Success != phHbci_GetDeviceLcInfo())

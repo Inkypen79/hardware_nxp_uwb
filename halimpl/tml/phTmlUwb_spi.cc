@@ -167,16 +167,16 @@ int phTmlUwb_Spi_Ioctl(void* pDevHandle, phTmlUwb_ControlCode_t eControlCode , l
   }
   switch(eControlCode){
     case phTmlUwb_SetPower:
-      ioctl((intptr_t)pDevHandle, SRXXX_SET_PWR, arg);
+      ioctl((intptr_t)pDevHandle, SR100_SET_PWR, arg);
       break;
     case phTmlUwb_EnableFwdMode:
-      ioctl((intptr_t)pDevHandle, SRXXX_SET_FWD, arg);
+      ioctl((intptr_t)pDevHandle, SR100_SET_FWD, arg);
       break;
     case phTmlUwb_EnableThroughPut:
-      //ioctl((intptr_t)pDevHandle, SRXXX_GET_THROUGHPUT, arg);
+      //ioctl((intptr_t)pDevHandle, SR100_GET_THROUGHPUT, arg);
       break;
     case phTmlUwb_EseReset:
-      ioctl((intptr_t)pDevHandle, SRXXX_ESE_RESET, arg);
+      ioctl((intptr_t)pDevHandle, SR100_ESE_RESET, arg);
       break;
     default:
       NXPLOG_TML_D("phTmlUwb_Spi_Ioctl(), Invalid command");

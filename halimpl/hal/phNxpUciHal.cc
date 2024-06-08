@@ -450,7 +450,7 @@ static void phNxpUciHal_kill_client_thread(
  *
  * Description      This function is called by libuwb-uci during the
  *                  initialization of the UWBC. It opens the physical connection
- *                  with UWBC (SRXXX) and creates required client thread for
+ *                  with UWBC (SR100) and creates required client thread for
  *                  operation.
  *                  After open is complete, status is informed to libuwb-uci
  *                  through callback function.
@@ -461,7 +461,7 @@ static void phNxpUciHal_kill_client_thread(
  ******************************************************************************/
 tHAL_UWB_STATUS phNxpUciHal_open(uwb_stack_callback_t* p_cback, uwb_stack_data_callback_t* p_data_cback)
 {
-  static const char uwb_dev_node[256] = "/dev/srxxx";
+  static const char uwb_dev_node[256] = "/dev/sr100";
   phOsalUwb_Config_t tOsalConfig;
   phTmlUwb_Config_t tTmlConfig;
   tHAL_UWB_STATUS wConfigStatus = UWBSTATUS_SUCCESS;
